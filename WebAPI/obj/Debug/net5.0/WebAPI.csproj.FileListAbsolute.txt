@@ -38,7 +38,6 @@ C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.Identi
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -70,3 +69,8 @@ C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Autofac.Extras.D
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\user\source\repos\FinalProject\WebAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
