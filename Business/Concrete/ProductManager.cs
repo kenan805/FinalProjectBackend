@@ -2,6 +2,8 @@
 using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Core.Aspects.Autofac.Validation;
 using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Business;
@@ -31,8 +33,10 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-        [SecuredOperation("product.add,admin")]
+        [SecuredOperation("product.add")]
         [ValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect("IProductService.Get")]
+        [TransactionScopeAspect]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), CheckIfProductNameExists(product.ProductName), CheckIfCategoryLimitExceded());
@@ -44,17 +48,16 @@ namespace Business.Concrete
             return new SuccessResult(Messages.ProductAdded);
 
         }
+
+        [CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
-            {
-                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
-            }
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.ProductsListed);
         }
         public IDataResult<List<Product>> GetAllByCategoryId(int id)
             => new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == id));
 
+        [CacheAspect]
         public IDataResult<Product> GetById(int id)
             => new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id));
 
@@ -64,6 +67,7 @@ namespace Business.Concrete
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
             => new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
 
+        [TransactionScopeAspect]
         public IResult Update(Product product)
         {
             _productDal.Update(product);
@@ -97,5 +101,7 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
+
+        
     }
 }
