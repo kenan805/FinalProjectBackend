@@ -31,7 +31,7 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
 
         public object Get(string key)
         {
-            return Get(key);
+            return _memoryCache.Get(key);
         }
 
         public bool IsAdd(string key)
